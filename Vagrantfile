@@ -91,5 +91,10 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", path: "wordpress_download.sh"
 
   config.vm.provision "shell", path: "run.sh"
+  
+  config.vm.provision :file do |file|
+    file.source      = 'wp-config.php'
+    file.destination = '/home/vagrant/wp-config.php'
+  end
 	
 end
