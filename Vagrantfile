@@ -86,11 +86,6 @@ Vagrant.configure(2) do |config|
     file.destination = '/home/vagrant/docker-compose.yml'
   end
   
-  config.vm.provision :file do |file|
-    file.source      = 'entrypoint.sh'
-    file.destination = '/home/vagrant/entrypoint.sh'
-  end
-  
   #config.vm.provision "shell", inline: "chmod 777 run.sh"
   
   config.vm.provision "shell", path: "wordpress_download.sh"
